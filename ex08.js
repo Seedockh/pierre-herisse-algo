@@ -1,5 +1,5 @@
 // Implement Queue FIFO
-module.exports = class FIFOQueue {
+class FIFOQueue {
   constructor() {
     this.index = 0
   }

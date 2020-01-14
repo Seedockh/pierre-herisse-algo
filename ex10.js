@@ -1,4 +1,4 @@
-module.exports = class Deck {
+class Deck {
   constructor() {
     this.deckLimit = 52
     this.maxCardsPerColor = 13

@@ -1,5 +1,5 @@
 // Are 2 string anagrams
-module.exports = function isAnagram (left,right) {
+function isAnagram (left,right) {
   let bucket = ''
   for (let i=0; i<left.length; i++) {
     if (right.indexOf(left[i]) >= 0)

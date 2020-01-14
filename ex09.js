@@ -1,5 +1,5 @@
 // Implement Stack with O(1) access
-module.exports = class DirectAccessStack {
+class DirectAccessStack {
   constructor() {}
 
   push(v) {

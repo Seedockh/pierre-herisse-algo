@@ -62,8 +62,3 @@ class ChessGame {
     console.log(this.chessboard)
   }
 }
-
-const chess = new ChessGame()
-chess.setWhiteChessMen()
-chess.setBlackChessMen()
-chess.printBoard()

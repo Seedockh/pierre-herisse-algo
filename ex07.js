@@ -1,5 +1,5 @@
 // Implement Stack LIFO
-module.exports = class LIFOStack {
+class LIFOStack {
   constructor() {
     this.index = 0
   }

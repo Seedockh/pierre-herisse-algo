@@ -1,5 +1,5 @@
 // Reverse a string
-module.exports = function reverseStr (str) {
+function reverseStr (str) {
   let reverse = ''
   for (let i=str.length-1; i>=0; i--) {
     reverse += str[i]
