@@ -1,5 +1,5 @@
 // create linked list with 2 methods
-class LinkedList {
+module.exports = class LinkedList {
   constructor() {
     this.head = null
     this.tail = null
@@ -8,7 +8,7 @@ class LinkedList {
   appendToTail(v) {
     if (this.head === null && this.tail === null) {
       this.head = v
-      this[v] = { value: v, next: null}
+      return this[v] = { value: v, next: null}
     }
 
     if (this.head !== null && this.tail === null) {
@@ -41,14 +41,3 @@ class LinkedList {
     return delete this[index]
   }
 }
-
-/*
-let list = new LinkedList()
-list.appendToTail('first')
-list.appendToTail('second')
-list.appendToTail('third')
-list.appendToTail('fourth')
-list.appendToTail('fifth')
-list.deleteNode('third')
-console.log(list)
-*/
