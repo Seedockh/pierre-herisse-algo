@@ -8,4 +8,4 @@ for (let i=0; i<left.length; i++) {
     bucket += left[i]
 }
 
-return console.log(left.length === right.length && right.length === bucket.length)
+return (left.length === right.length && right.length === bucket.length)

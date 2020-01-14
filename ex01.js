@@ -8,4 +8,4 @@ for (let i=0; i<str.length; i++) {
     checkStr += str[i]
 }
 
-return console.log(str === checkStr)
+return str === checkStr
