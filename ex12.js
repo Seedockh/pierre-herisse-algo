@@ -1,6 +1,6 @@
-function fibonacci() {
+function fibonacci(n) {
   let suite = []
-  while(suite.length < 17) {
+  while(suite.length < n) {
     if (suite.length===0) suite.push(0)
     else if (suite.length===1) suite.push(1)
     else {
