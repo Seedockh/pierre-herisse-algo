@@ -11,6 +11,7 @@ class BalancedTree extends Tree {
 
     let isBalanced = true
     this.tree.forEach( node => {
+      console.log(`${this.getLeftHeight(node)}-${this.getRightHeight(node)} : ${(Math.abs(this.getLeftHeight(node)-this.getRightHeight(node)) <= 1)}`)
       if (Math.abs(this.getLeftHeight(node)-this.getRightHeight(node)) > 1)
         isBalanced = false
     })
@@ -28,7 +29,7 @@ class BalancedTree extends Tree {
   getRightHeight(node) {
     let jump = 1
     if (node.children.length > 1) {
-      jump += this.getLeftHeight(this.tree[node.children[node.children.length-1]])
+      jump += this.getLeftHeight(this.tree[node.children[1]])
     }
     return jump
   }
