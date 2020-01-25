@@ -16,16 +16,14 @@ class Tree {
   }
 
   deleteNode(value) {
-    this.tree.forEach( branch => {
-      console.log(branch)
-      if (branch.children.indexOf(value) > -1) {
-        console.log(`deleting ${value} from ${branch.v} children`);
-        delete branch.children[value]
+    this.tree.forEach( node => {
+      if (node.children.indexOf(value) > -1) {
+        delete node.children[node.children.indexOf(value)]
       }
 
-      if (branch.parent === value) {
-        console.log(`deleting child ${branch.v} from ${value}`);
-        delete this.tree[branch.v]
+      if (node.parent === value) {
+        this.deleteNode(node.v)
+        delete this.tree[node.v]
       }
     })
 
@@ -34,14 +32,35 @@ class Tree {
 }
 
 const t = new Tree()
-t.add(1)
-t.add(10, 1)
-t.add(11, 10)
-t.add(110, 11)
-t.add(100, 1)
-t.add(101, 100)
-t.find(1)
-console.log('----- DELETE')
-t.deleteNode(11)
+t.add(0)
+t.add(100, 0)
+t.add(200, 0)
+t.add(300, 0)
+t.add(400, 0)
+t.add(500, 0)
+
+t.add(110, 100)
+t.add(120, 100)
+t.add(130, 100)
+
+t.add(310, 300)
+
+t.add(410, 400)
+t.add(420, 400)
+
+t.add(111, 110)
+t.add(122, 120)
+t.add(133, 130)
+
+t.add(311, 310)
+t.add(312, 310)
+t.add(313, 310)
+
+t.add(411, 410)
+t.add(422, 420)
+t.add(423, 420)
+
 console.log(t)
-t.find(10)
+console.log('----- DELETE ROOT')
+t.deleteNode(0)
+console.log(t)
