@@ -1,11 +1,19 @@
 class Tree {
   constructor() {
     this.tree = []
+    this.root = null
   }
 
-  add(value, parent) {
-    if (this.tree[`${parent}`])
+  add(value, parent = null) {
+    if (this.root === null)
+      this.root = { v: value, children: [], parent: null }
+
+    if (this.tree[`${parent}`]) {
+      if (this.tree[`${parent}`].v === this.root.v)
+          this.root.children.push(value)
+
       this.tree[`${parent}`].children.push(value)
+    }
 
     this.tree[`${value}`] = { v: value, children: [], parent: parent }
   }
@@ -17,6 +25,9 @@ class Tree {
 
   deleteNode(value) {
     this.tree.forEach( node => {
+      if (node.parent === this.root.v)
+        delete this.root.children[this.root.children.indexOf(value)]
+
       if (node.children.indexOf(value) > -1) {
         delete node.children[node.children.indexOf(value)]
       }
@@ -27,10 +38,13 @@ class Tree {
       }
     })
 
+    if (value === this.root.v) this.root = null
     delete this.tree[value]
   }
 }
 
+module.exports = Tree
+/*
 const t = new Tree()
 t.add(0)
 t.add(100, 0)
@@ -63,4 +77,4 @@ t.add(423, 420)
 console.log(t)
 console.log('----- DELETE ROOT')
 t.deleteNode(0)
-console.log(t)
+console.log(t)*/
