@@ -1,4 +1,4 @@
-class Graph {
+module.exports = class Graph {
   constructor() {
     this.adjencies = new Map()
   }
@@ -50,7 +50,7 @@ class Graph {
     }
   }
 }
-
+/*
 const g = new Graph();
 
 g.addNodeFromArray([1, 2, 4, 5, 6, 7, 8, 10, 13, 42])
@@ -74,3 +74,4 @@ g.removeEdge(8, 42)
 g.dump()
 console.log('-------- SORTING')
 console.log(g.sort((a, b) => a < b))
+*/
